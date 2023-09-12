@@ -5,25 +5,25 @@ import {createPortal} from 'react-dom';
 const modalRoot= document.querySelector('#modal-root');
 export default class Modal extends Component {
 
- componentWillUnmount() {
-        console.log('modal WillUnmount ');
-		document.removeEventListener('keydown', this.handleKeyEsc)
-	}
+ 
 	componentDidMount() {
         console.log(' modal DidMount');
 		// /??????????????????????????????
-        window.addEventListener('keydown', this.handleKeyEsc);
+        document.addEventListener('keydown', this.handleKeyEsc);
            
         };
         // /??????????????????????????????
 	
-
+componentWillUnmount() {
+        console.log('modal WillUnmount ');
+		document.removeEventListener('keydown', this.handleKeyEsc)
+	}
 	
-
-	 handleKeyEsc = (e) => {
-		if (e.key === 'Escape') this.props.onClose()
+ handleKeyEsc = (e) => {
+		if (e.code === 'Escape') this.props.onClose()
 		console.log('Esc');
 	}
+	
  	
 // 		const { children, toggleModal } = this.props
 render() {
