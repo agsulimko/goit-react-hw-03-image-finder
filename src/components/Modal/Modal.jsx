@@ -2,17 +2,18 @@
 import css from './Modal.module.css'
 import {createPortal} from 'react-dom';
 
+
+
 const modalRoot= document.querySelector('#modal-root');
 export default class Modal extends Component {
 
  
 	componentDidMount() {
         console.log(' modal DidMount');
-		// /??????????????????????????????
-        document.addEventListener('keydown', this.handleKeyEsc);
-           
+		
+        document.addEventListener('keydown', this.handleKeyEsc);  
         };
-        // /??????????????????????????????
+    
 	
 componentWillUnmount() {
         console.log('modal WillUnmount ');
@@ -21,14 +22,19 @@ componentWillUnmount() {
 	
  handleKeyEsc = (e) => {
 		if (e.code === 'Escape') this.props.onClose()
-		console.log('Esc');
+		// console.log('Esc');
 	}
-	
+	handlBackdropClick= event =>{
+        console.log('BackdropClick');
+        if(event.target===event.currentTarget) {
+            this.props.onClose();
+        }
+    }
  	
 // 		const { children, toggleModal } = this.props
 render() {
     return createPortal(
-        <div className={css.modalBackdrop}>
+        <div className={css.modalBackdrop} onClick={this.handlBackdropClick}>
 <div className={css.modalContent}>{this.props.children} </div> 
 </div>,
 modalRoot,
