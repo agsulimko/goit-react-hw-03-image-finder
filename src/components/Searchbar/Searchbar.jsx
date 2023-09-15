@@ -77,25 +77,6 @@ export default class Searchbar extends Component {
 
 
 
-// <FormCreatePhotos createPhotos={createPhotos}
-      
-//       />
-//       {isLoading && <h1>Loading...</h1>}
-//       {error && <h1>{error}</h1>}
-//       {photos && (
-//         <ul className='list-group'>
-//           {(photos).map((el) => (
-//             <ImageGalleryItem
-//             photos={el}
-//               key={el.id}
-//               handleDelete={handleDelete}
-//                handleCheck={handleCheck}
-//             />
-//           ))}
-//         </ul>
-//       )}
-
-
 
 
 
