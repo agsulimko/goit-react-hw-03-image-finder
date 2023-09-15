@@ -1,6 +1,7 @@
 .listImageGallery{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 5px;
     list-style-type: none;
+    margin-top: 5px;
 }

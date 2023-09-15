@@ -4,7 +4,9 @@ import { Component } from 'react'
 // import FormCreatePhotos from 'components/FormCreatePhotos/FormCreatePhotos'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button'
-
+import css from './Searchbar.module.css'
+import { wait } from '@testing-library/user-event/dist/utils';
+// import {TextField} from './Searchbar.styled'
 export default class Searchbar extends Component {
   state = {
     inputQuery: '',
@@ -31,7 +33,7 @@ export default class Searchbar extends Component {
     console.log(this.state.inputQuery);
 		
  return (
-  <header className="searchbar">
+  <header className={css.searchbar}>
        
     <form className="form" onSubmit={this.handleSubmit}>
 
@@ -42,20 +44,22 @@ export default class Searchbar extends Component {
    
 				
                     <TextField 
-                    //  className="input"
+                      // className="input"
                      type="text"
                     //  autocomplete="off"
                     //  autofocus
                     //  placeholder="Search images and photos"
                      name='title'
-                 
+                     size="small"
+                     sx={{ m: 1, width: '50ch'}}
+                     style={{ backgroundColor: 'white' }}
                     className='form-control'
                     onChange={this.handleInputQuery}
                     value={this.state.inputQuery}
-                    id="outlined-basic" 
+                    id="input-with-sx" 
                     label="Search images and photos" 
                     variant="outlined"
-
+                    margin="dense"
                      />
 					
 				
@@ -75,6 +79,24 @@ export default class Searchbar extends Component {
 
 
 
+
+
+      
+//       />
+//       {isLoading && <h1>Loading...</h1>}
+//       {error && <h1>{error}</h1>}
+//       {photos && (
+//         <ul className='list-group'>
+//           {(photos).map((el) => (
+//             <ImageGalleryItem
+//             photos={el}
+//               key={el.id}
+//               handleDelete={handleDelete}
+//                handleCheck={handleCheck}
+//             />
+//           ))}
+//         </ul>
+//       )}
 
 
 
