@@ -5,7 +5,7 @@ const ImageGalleryItem = ({hit:{webformatURL,largeImageURL, tags},id}) =>{
 return(
 
 
-<li class="gallery-item">
+<li className="gallery-item">
   <img src={webformatURL} alt={tags} width={260}height={150}/>
 </li>
 )
