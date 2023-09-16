@@ -88,7 +88,7 @@ render() {
      {/* <Button /> */}
        {/* <Loader /> */}
        
-       <Modal> </Modal>    
+       {/* <Modal> </Modal>     */}
        {/* {showModal &&  <Modal onClose={this.toggleModal} > <h2>Modal Hallo</h2>
        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, molestias assumenda aliquid incidunt corrupti a pariatur ratione rerum numquam alias omnis in non totam voluptatum quas voluptatem! Non, aspernatur? Suscipit!</p>
        <button type='button' onClick={this.toggleModal}>Close modal</button> 
