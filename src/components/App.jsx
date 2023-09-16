@@ -9,6 +9,7 @@ import Searchbar from './Searchbar/Searchbar'
   // import axios from "axios";
     import getAllPhotos from '../api/api'
     import { Container } from '@mui/material';
+    import Loader from './Loader/Loader';
 
    class App extends Component {
 
@@ -113,6 +114,7 @@ render() {
 
           <Searchbar  onSubmit={this.hendleFormSubmit}/>   
          {/* <button type='button' onClick={this.toggleModal}>Open modal</button>  */}
+         {isLoading && <Loader />}
          {gallery && gallery.length > 0 && <ImageGallery hits={gallery} />}
          {currentPage < quantityPage && (
           <ButtonLoad handleBtnLoad={this.handleBtnLoad} />

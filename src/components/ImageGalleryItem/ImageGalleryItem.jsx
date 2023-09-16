@@ -40,7 +40,6 @@ return(
    aria-describedby="modal-modal-description"
  >
    <Box sx={style}>
-    
      <img src= {largeImageURL}
 alt="Image" style={{ width: 800,   marginBottom: -50, }} />
        

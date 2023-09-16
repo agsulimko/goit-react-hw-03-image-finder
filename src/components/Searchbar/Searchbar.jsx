@@ -3,8 +3,13 @@ import { Component } from 'react'
 // import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem'
 // import FormCreatePhotos from 'components/FormCreatePhotos/FormCreatePhotos'
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button'
+// import Box from '@mui/material/Box';
+// import Button from '@mui/material/Button'
 import css from './Searchbar.module.css'
+
+import YoutubeSearchedForIcon from '@mui/icons-material/YoutubeSearchedFor';
+ import InputAdornment from '@mui/material/InputAdornment';
+// import AccountCircle from '@mui/icons-material/AccountCircle';
 // import { wait } from '@testing-library/user-event/dist/utils';
 // import {TextField} from './Searchbar.styled'
 export default class Searchbar extends Component {
@@ -34,15 +39,14 @@ export default class Searchbar extends Component {
 		
  return (
   <header className={css.searchbar}>
-       
+   
     <form className="form" onSubmit={this.handleSubmit}>
 
-    <Button variant="contained" className='btn btn-success' type='submit' >Show all photos 
+    {/* <Button variant="contained" className='btn btn-success' type='submit' >Show all photos 
     <span className="button-label">Search</span>
-    </Button> 
+    </Button>  */}
       
-   
-				
+  
                     <TextField 
                       // className="input"
                      type="text"
@@ -51,8 +55,9 @@ export default class Searchbar extends Component {
                     //  placeholder="Search images and photos"
                      name='title'
                      size="small"
-                     sx={{ m: 1, width: '50ch'}}
+                     sx={{ m: 1, width: '35ch'}}
                      style={{ backgroundColor: 'white' }}
+                    
                     className='form-control'
                     onChange={this.handleInputQuery}
                     value={this.state.inputQuery}
@@ -60,13 +65,24 @@ export default class Searchbar extends Component {
                     label="Search images and photos" 
                     variant="outlined"
                     margin="dense"
-                     />
+                   
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <YoutubeSearchedForIcon />
+                        </InputAdornment>
+                      ),
+                    }}
+
+                             />  
+                   
 					
 				
 
                 {/* <Button variant="contained" className='btn btn-success' type='submit' >Show all photos </Button> */}
 				
-			</form>
+			</form> 
+     
        {/* <button className='btn btn-success' onClick={handleClick}>
         Show all photos
       </button>  */}
