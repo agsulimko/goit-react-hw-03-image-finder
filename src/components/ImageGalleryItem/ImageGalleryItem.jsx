@@ -42,7 +42,7 @@ return(
    <Box sx={style}>
     
      <img src= {largeImageURL}
-alt="Image" style={{ width: '100%',   marginBottom: -50, }} />
+alt="Image" style={{ width: 800,   marginBottom: -50, }} />
        
      
    </Box>
