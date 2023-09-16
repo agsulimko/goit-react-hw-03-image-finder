@@ -2,12 +2,10 @@ import React, { Component } from 'react'
 import Searchbar from './Searchbar/Searchbar'
 //  import Modal from './Modal/Modal'
  import  ButtonLoad  from './ButtonLoad/ButtonLoad'
-// import Button from '@mui/material/Button'
+
  import ImageGallery from './ImageGallery/ImageGallery';
  import { Notify } from 'notiflix/build/notiflix-notify-aio';
-//  import styled from 'styled-components'
-// import styled from '@emotion/styled'
-  // import axios from "axios";
+
     import getAllPhotos from '../api/api'
     import { Container } from '@mui/material';
     import Loader from './Loader/Loader';
@@ -64,9 +62,9 @@ import Searchbar from './Searchbar/Searchbar'
         return;
        }
      
-      // if (hits.length === 0) {
-      //   this.setState({ error: 'Not data found' });
-      // }
+       if (hits.length === 0) {
+         this.setState({ error: 'Not data found' });
+       }
 
 
       if (hits.length > 0) {

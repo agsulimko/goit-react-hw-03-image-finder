@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+
 
 import Modal from '@mui/material/Modal';
 
@@ -10,7 +10,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  // widthMax: 1200,
+  // width: 1200,
   bgcolor: 'background.paper',
   border: 'none',
   boxShadow: 24,
@@ -41,7 +41,7 @@ return(
  >
    <Box sx={style}>
      <img src= {largeImageURL}
-alt="Image" style={{ width: 800,   marginBottom: -50, }} />
+alt={tags} style={{ width: 800,   marginBottom: -50, }} />
        
      
    </Box>
