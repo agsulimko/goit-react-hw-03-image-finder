@@ -6,9 +6,9 @@ import TextField from '@mui/material/TextField';
  import Box from '@mui/material/Box';
 // import Button from '@mui/material/Button'
 import css from './Searchbar.module.css'
-
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import YoutubeSearchedForIcon from '@mui/icons-material/YoutubeSearchedFor';
- import InputAdornment from '@mui/material/InputAdornment';
+ 
 // import AccountCircle from '@mui/icons-material/AccountCircle';
 // import { wait } from '@testing-library/user-event/dist/utils';
 // import {TextField} from './Searchbar.styled'
@@ -24,7 +24,7 @@ export default class Searchbar extends Component {
   handleSubmit = e => {
     e.preventDefault();
     if (this.state.inputQuery.trim() === '') {
-     alert('Enter your request');
+      Notify.failure('Enter your request');
       return;
     }
     this.props.onSubmit(this.state.inputQuery.trim());

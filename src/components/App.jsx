@@ -4,6 +4,7 @@ import Searchbar from './Searchbar/Searchbar'
  import  ButtonLoad  from './ButtonLoad/ButtonLoad'
 // import Button from '@mui/material/Button'
  import ImageGallery from './ImageGallery/ImageGallery';
+ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 //  import styled from 'styled-components'
 // import styled from '@emotion/styled'
   // import axios from "axios";
@@ -54,9 +55,12 @@ import Searchbar from './Searchbar/Searchbar'
       );
       
       if (!hits.length) {
-       alert(
-          'Sorry, there are no images matching your search query. Please try again.'
-        );
+      //  alert(
+      //     'Sorry, there are no images matching your search query. Please try again.'
+      //   );
+      Notify.failure(
+             'Sorry, there are no images matching your search query. Please try again.'
+         )
         return;
        }
      
