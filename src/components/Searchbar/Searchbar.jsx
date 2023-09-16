@@ -3,7 +3,7 @@ import { Component } from 'react'
 // import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem'
 // import FormCreatePhotos from 'components/FormCreatePhotos/FormCreatePhotos'
 import TextField from '@mui/material/TextField';
-// import Box from '@mui/material/Box';
+ import Box from '@mui/material/Box';
 // import Button from '@mui/material/Button'
 import css from './Searchbar.module.css'
 
@@ -46,7 +46,8 @@ export default class Searchbar extends Component {
     <span className="button-label">Search</span>
     </Button>  */}
       
-  
+      <Box sx={{ display: 'flex', alignItems: 'center' , justifyContent: 'center'}}>
+      <YoutubeSearchedForIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
                     <TextField 
                       // className="input"
                      type="text"
@@ -64,18 +65,8 @@ export default class Searchbar extends Component {
                     id="input-with-sx" 
                     label="Search images and photos" 
                     variant="outlined"
-                    margin="dense"
-                   
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <YoutubeSearchedForIcon />
-                        </InputAdornment>
-                      ),
-                    }}
-
-                             />  
-                   
+                    margin="dense"               />  
+                   </Box> 
 					
 				
 
