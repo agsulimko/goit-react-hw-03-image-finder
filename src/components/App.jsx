@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Searchbar from './Searchbar/Searchbar'
 //  import Modal from './Modal/Modal'
- import  Button  from './Button/Button'
+ import  ButtonLoad  from './ButtonLoad/ButtonLoad'
 // import Button from '@mui/material/Button'
  import ImageGallery from './ImageGallery/ImageGallery';
 //  import styled from 'styled-components'
@@ -115,7 +115,7 @@ render() {
          {/* <button type='button' onClick={this.toggleModal}>Open modal</button>  */}
          {gallery && gallery.length > 0 && <ImageGallery hits={gallery} />}
          {currentPage < quantityPage && (
-          <Button handleBtnLoad={this.handleBtnLoad} />
+          <ButtonLoad handleBtnLoad={this.handleBtnLoad} />
         )}
 
 {/* <Button  handleBtnLoad={this.handleBtnLoad} /> */}
