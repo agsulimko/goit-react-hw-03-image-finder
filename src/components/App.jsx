@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Searchbar from './Searchbar/Searchbar'
- import Modal from './Modal/Modal'
-// import  Button  from './Button/Button';
+//  import Modal from './Modal/Modal'
+ import  Button  from './Button/Button'
+// import Button from '@mui/material/Button'
  import ImageGallery from './ImageGallery/ImageGallery';
 //  import styled from 'styled-components'
 // import styled from '@emotion/styled'
@@ -14,13 +15,15 @@ import Searchbar from './Searchbar/Searchbar'
 
     state = {
       searchQuery: '',
-      gallery: null,
+      gallery: [],
       currentPage: 1,
+      quantityPage: null,
       error: null,
-      isLoading: false,
-      // isShowModal: false,
+     isLoading: false,
+      // showModal: false,
+      // largeImageURL: null,
+      // tags: null,
     };
-
     componentDidMount;
 
    
@@ -44,19 +47,28 @@ import Searchbar from './Searchbar/Searchbar'
     this.setState({ isLoading: true });
     try {
 
-      const { hits } = await getAllPhotos(
+      const { hits,totalHits } = await getAllPhotos(
         this.state.searchQuery,
         this.state.currentPage
       );
       
-      // this.setState({ gallery: hits });
-
+      if (!hits.length) {
+       alert(
+          'Sorry, there are no images matching your search query. Please try again.'
+        );
+        return;
+       }
      
-      if (hits.length === 0) {
-        this.setState({ error: 'Not data found' });
-      }
+      // if (hits.length === 0) {
+      //   this.setState({ error: 'Not data found' });
+      // }
+
+
       if (hits.length > 0) {
-        this.setState({ gallery: hits });
+        this.setState(prev => ({
+          gallery: [...prev.gallery, ...hits],
+          quantityPage: Math.ceil(totalHits / 12),
+        }));
       }
     } catch (err) {
       this.setState({ error: err.message });
@@ -66,15 +78,32 @@ import Searchbar from './Searchbar/Searchbar'
   };
 
   hendleFormSubmit = (searchQuery) => {
-    this.setState({ error: null, searchQuery });
+    this.setState({ currentPage: 1,
+      quantityPage: null,
+      gallery: [],
+      error: null,
+      searchQuery, });
 
-    console.log(searchQuery);
+    // console.log(searchQuery);
   };
 
-
+  handleBtnLoad = () => {
+    this.setState(prev => ({
+      currentPage: prev.currentPage + 1,
+    }));
+  };
 
 render() {
-  const { gallery } = this.state;
+  const {
+    error,
+    gallery,
+    isLoading,
+    showModal,
+    largeImageURL,
+    tags,
+    currentPage,
+    quantityPage,
+  } = this.state;
   // const { error, gallery, isLoading } = this.state;
   console.log(gallery);
    return (
@@ -85,7 +114,12 @@ render() {
           <Searchbar  onSubmit={this.hendleFormSubmit}/>   
          {/* <button type='button' onClick={this.toggleModal}>Open modal</button>  */}
          {gallery && gallery.length > 0 && <ImageGallery hits={gallery} />}
-     {/* <Button /> */}
+         {currentPage < quantityPage && (
+          <Button handleBtnLoad={this.handleBtnLoad} />
+        )}
+
+{/* <Button  handleBtnLoad={this.handleBtnLoad} /> */}
+
        {/* <Loader /> */}
        
        {/* <Modal> </Modal>     */}
