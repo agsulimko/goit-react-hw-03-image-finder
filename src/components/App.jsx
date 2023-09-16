@@ -98,16 +98,13 @@ import Searchbar from './Searchbar/Searchbar'
 
 render() {
   const {
-    error,
     gallery,
     isLoading,
-    showModal,
-    largeImageURL,
-    tags,
     currentPage,
     quantityPage,
   } = this.state;
-  // const { error, gallery, isLoading } = this.state;
+  // const { error, gallery, isLoading, showModal,largeImageURL, tags, } = this.state;
+  
   console.log(gallery);
    return (
     <Container maxWidth="xl">
@@ -128,7 +125,7 @@ render() {
        
        {/* <Modal> </Modal>     */}
        {/* {showModal &&  <Modal onClose={this.toggleModal} > <h2>Modal Hallo</h2>
-       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, molestias assumenda aliquid incidunt corrupti a pariatur ratione rerum numquam alias omnis in non totam voluptatum quas voluptatem! Non, aspernatur? Suscipit!</p>
+      
        <button type='button' onClick={this.toggleModal}>Close modal</button> 
         </Modal> }     */}
      
