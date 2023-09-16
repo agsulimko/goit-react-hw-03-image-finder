@@ -23,7 +23,7 @@ import Searchbar from './Searchbar/Searchbar'
 
     componentDidMount;
 
-    state = {  }
+   
 
 	// toggleModal = () => {
 	// 	this.setState((prev) => ({ isShowModal: !prev.isShowModal }))
@@ -74,8 +74,8 @@ import Searchbar from './Searchbar/Searchbar'
 
 
 render() {
-  const { error, gallery, isLoading } = this.state;
- 
+  const { gallery } = this.state;
+  // const { error, gallery, isLoading } = this.state;
   console.log(gallery);
    return (
     <Container maxWidth="xl">

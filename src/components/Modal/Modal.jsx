@@ -1,8 +1,8 @@
 // import * as React from 'react';
-import React, { Component } from 'react'
+ import React from 'react'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+
 import Modal from '@mui/material/Modal';
 
 const style = {
@@ -39,7 +39,6 @@ export default function BasicModal() {
 "https://pixabay.com/get/g9fa88d8f527c93fc8a7a32f6b024c94e43ce0ad33aec7b27556725b8cacb75118bbe0e52abd5d11511f607cb820adbab988faa0ca4988dafcd481afa6fc78855_1280.jpg" alt="Image" style={{ width: '100%',   marginBottom: -50, }} />
             
           
-        
         </Box>
       </Modal>
     </div>
