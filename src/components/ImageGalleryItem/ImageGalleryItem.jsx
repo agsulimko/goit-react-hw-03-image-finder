@@ -7,9 +7,9 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  // width: 1200,
+   width: 0,
   // bgcolor: 'background.paper',
-  bgcolor: 'rgba(205, 214, 219, 0)',
+  // bgcolor: 'rgba(205, 214, 219, 0)',
   border: 'none',
   boxShadow: 24,
   p: 4,
@@ -42,7 +42,7 @@ return(
    <Box sx={style}> 
    
      <img src= {largeImageURL}
-alt={tags} style={{ width: 800,   marginBottom: -50, }} />
+alt={tags} style={{ width: 800, marginLeft: -400, }} />
        
      
    </Box>
