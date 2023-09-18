@@ -8,23 +8,26 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   // width: 1200,
-  bgcolor: 'background.paper',
+  // bgcolor: 'background.paper',
+  bgcolor: 'rgba(205, 214, 219, 0)',
   border: 'none',
   boxShadow: 24,
-  width: 0,
+  p: 4,
   padding: 0,
+  
 
 };
-
+ 
 const ImageGalleryItem = ({hit:{webformatURL,largeImageURL, tags},id}) =>{
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => setOpen(true) ;
   const handleClose = () => setOpen(false);
+ 
  
 return(
 
 <>
-<li onClick={handleOpen} className="gallery-item">
+<li onClick={handleOpen} className="gallery-item" >
   <img src={webformatURL} alt={tags} width={260}height={150}/>
 </li>
  <div>
@@ -36,7 +39,8 @@ return(
    aria-labelledby="modal-modal-title"
    aria-describedby="modal-modal-description"
  >
-   <Box sx={style}>
+   <Box sx={style}> 
+   
      <img src= {largeImageURL}
 alt={tags} style={{ width: 800,   marginBottom: -50, }} />
        

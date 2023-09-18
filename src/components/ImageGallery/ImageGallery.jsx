@@ -10,6 +10,7 @@ const ImageGallery = ({ hits }) => {
         <ul className={css.listImageGallery}>
           {hits.map(hit => (
             <ImageGalleryItem hit={hit} key={hit.id}  />
+           
           ))}
         </ul>
       </div>
